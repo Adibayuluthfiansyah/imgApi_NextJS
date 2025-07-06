@@ -13,7 +13,7 @@ const Page = async () => {
 
   return (
     <div className='justify-center items-center p-4'>
-      <h1>Your Image Change The World</h1>
+      <h1 className='p-4 justify-center text-center text-2xl font-bold'>Your Image Change The World</h1>
       <HomeImage api={homeImageHero}/>
     </div>
     
