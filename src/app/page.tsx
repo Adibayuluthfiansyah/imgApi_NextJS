@@ -6,24 +6,15 @@ const Page = async () => {
 
 
   const response = await fetch (`${process.env.NEXT_PUBLIC_API_BASE_URL}`)
-  const imageLaunch = await response.json()
+  const homeImageHero = await response.json()
 
-  console.log(imageLaunch)
+  console.log(homeImageHero)
 
 
   return (
-    <div>
-      {imageLaunch?.results?.map((data:any, id: any) => {
-        return (
-          <div key={id} className='p-4 '>
-            {data.urls && (
-              <img
-              src={data.urls.small}/>
-            )}
-          <p>{data.user.username}</p>
-          </div>
-        )
-      })}
+    <div className='justify-center items-center p-4'>
+      <h1>Your Image Change The World</h1>
+      <HomeImage api={homeImageHero}/>
     </div>
     
   )
