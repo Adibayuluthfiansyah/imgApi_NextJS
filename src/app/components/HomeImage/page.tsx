@@ -6,7 +6,7 @@ const HomeImage = ({api}:any) => {
         <div className='grid md:grid-cols-4 sm:grid-cols-3 grid-cols-2 gap-4 px-4'>
             {api?.results?.map((image:any) => {
                 return(
-        <Link href={image.urls.regular || image.urls.full} key={image.id} className='cursor-pointer' target='blank'>
+        <Link href={image.urls.regular || image.urls.full} key={image.id} className='cursor-pointer shadow-xl' target='blank'>
             <div>
             {image.urls && (
             <img
@@ -14,7 +14,7 @@ const HomeImage = ({api}:any) => {
             alt={image.alt_description || image.description || "Image"}
             />
             )}
-        <p>{image.user.username}</p>
+        <p className='p-2'>{image.user.username}</p>
         </div>
         </Link>
             )
