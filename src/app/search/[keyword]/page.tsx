@@ -2,15 +2,18 @@ import React from 'react'
 
 interface SearchPageProps {
     params: {
-        keyword: string
+        keyword: any
     }
 }
 
-const Page = ({params}: SearchPageProps) => {
-    console.log(params.keyword)
+const Page = async ({params}: SearchPageProps) => {
+    const {keyword} = await params
+    const decodeKeyword = decodeURIComponent(keyword)
+    console.log("Keyword : " , decodeKeyword )
     return (
         <div>
-            <h1>Search Form</h1>
+            <h1>Searching for{decodeKeyword}</h1>
+            <p>This is search page</p>
         </div>
     ) 
 }
