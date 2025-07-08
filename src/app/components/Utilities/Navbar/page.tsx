@@ -1,17 +1,24 @@
 import React from 'react'
 import Link from 'next/link'
-import InputSearch from './InputSearch'
 
 
 const Navbar = () => {
     return (
-        <header className='bg-amber-500'>
-            <div className='flex md:flex-row flex-col justify-between '>
-               <Link href="/" className='text-white font-bold text-2xl pl-4 mt-2 '>LOGO</Link>
-               <InputSearch/>
+        <header className='relative bg-black/20 shadow-xl'>
+            {/* Background Pattern */}
+            <div className="absolute inset-0 bg-black/20"></div>
+            
+            <div className='relative z-10 container mx-auto px-4'>
+                <div className='flex md:flex-row flex-col justify-between items-center py-4'>
+                    <Link href="/" className='group flex items-center space-x-2 mb-4 md:mb-0'>
+                        <div className='text-white font-bold text-2xl group-hover:text-purple-200 transition-colors'>
+                            LOGO
+                        </div>
+                    </Link>
+                </div>
             </div>
         </header>
-    ) 
+    )
 }
 
 export default Navbar
