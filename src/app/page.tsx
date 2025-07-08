@@ -4,9 +4,7 @@ import HomeImage from './components/HomeImage/page';
 const Page = async () => {
   try {
     // Tambahkan count parameter untuk mendapatkan multiple images
-    const response = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}?client_id=${process.env.CLIENT_ID}&count=12`, {
-      cache: 'no-store'
-    });
+    const response = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}?client_id=${process.env.CLIENT_ID}&count=12`);
     
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);

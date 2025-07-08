@@ -20,7 +20,6 @@ api: {
 };
 }
 
-
 const HomeImage = ({api}: HomeImageProps) => {
     if (!api || !api.results || !Array.isArray(api.results)) {
         return (
