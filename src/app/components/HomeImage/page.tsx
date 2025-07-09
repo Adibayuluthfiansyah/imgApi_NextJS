@@ -1,3 +1,5 @@
+'use client'
+
 import Link from 'next/link'
 import React from 'react'
 
@@ -144,7 +146,7 @@ const HomeImage = ({ api }: HomeImageProps) => {
 
       {/* Load More Button */}
       <div className="text-center mt-12">
-        <button className="px-8 py-3 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-medium rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
+        <button className="px-8 py-3 bg-black text-white font-medium rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 cursor-pointer">
           Load More Photos
         </button>
       </div>
