@@ -3,6 +3,7 @@
 import Link from 'next/link'
 import React from 'react'
 
+
 interface ImageData {
   id: string;
   urls: {
@@ -29,6 +30,13 @@ interface HomeImageProps {
     results: ImageData[];
   };
 }
+
+interface Pagination {
+  api : {
+    total_pages?:number; 
+  }
+}
+
 
 const HomeImage = ({ api }: HomeImageProps) => {
   if (!api || !api.results || !Array.isArray(api.results)) {
@@ -145,10 +153,20 @@ const HomeImage = ({ api }: HomeImageProps) => {
       </div>
 
       {/* Load More Button */}
-      <div className="text-center mt-12">
-        <button className="px-8 py-3 bg-black text-white font-medium rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 cursor-pointer">
-          Load More Photos
+      <div className="text-center flex mt-12 justify-center items-center ">
+        <div className='flex p-3'>
+        <button className="px-5 py-3 bg-black text-white font-medium rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 cursor-pointer ">
+          Prev
         </button>
+        </div>
+        <div className='gap-3'>
+        </div>
+        <div className='flex p-3 '>
+          <button className="px-5 py-3 bg-black text-white font-medium rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 cursor-pointer">
+          Next
+        </button>
+
+        </div>
       </div>
     </div>
   );
