@@ -4,6 +4,7 @@ import InputSearch from './components/Utilities/Navbar/InputSearch';
 
 
 const Page = async () => {
+
   try {
     const response = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}?client_id=${process.env.CLIENT_ID}&count=12`);
     

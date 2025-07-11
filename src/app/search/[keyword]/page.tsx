@@ -7,17 +7,16 @@ interface SearchPageProps {
 }
 
 const Page = async ({params}:SearchPageProps)  => {
-
     const {keyword} = await params  
-    const response = await fetch(`https://api.unsplash.com/search/photos?page=1&query=${keyword}&client_id=${process.env.CLIENT_ID}&per_page=12`)
+    const decodedKeyword = decodeURI(keyword)
+    const response = await fetch(`${process.env.NEXT_PUBLIC_API_SEARCH_URL}?page=1&query=${decodedKeyword}&client_id=${process.env.CLIENT_ID}&per_page=12`)
     const searchImage = await response.json()
-    console.log(keyword)
+
 
 
     return (
     <div className='justify-center items-center p-4'>
-        <h1 className='p-4 justify-center text-center text-2xl font-bold'>Searching for {keyword} ... </h1>
-        
+        <h1 className='p-4 justify-center text-center text-2xl font-bold'>Searching for {decodedKeyword}</h1>
         <HomeImage api={searchImage} />
     </div>
 

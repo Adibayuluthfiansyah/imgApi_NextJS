@@ -2,6 +2,7 @@
 
 import Link from 'next/link'
 import React from 'react'
+import Pagination from '../Pagination/page';
 
 
 interface ImageData {
@@ -153,21 +154,7 @@ const HomeImage = ({ api }: HomeImageProps) => {
       </div>
 
       {/* Load More Button */}
-      <div className="text-center flex mt-12 justify-center items-center ">
-        <div className='flex p-3'>
-        <button className="px-5 py-3 bg-black text-white font-medium rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 cursor-pointer ">
-          Prev
-        </button>
-        </div>
-        <div className='gap-3'>
-        </div>
-        <div className='flex p-3 '>
-          <button className="px-5 py-3 bg-black text-white font-medium rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 cursor-pointer">
-          Next
-        </button>
-
-        </div>
-      </div>
+      <Pagination/>
     </div>
   );
 };
